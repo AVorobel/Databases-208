@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS UsersContacts(
     u_surname VARCHAR(30),
     u_email VARCHAR(35) NOT NULL,
     u_phone VARCHAR(13),
-    user_id INT UNSIGNED NOT NULL,
+    user_id INT UNSIGNED NOT NULL UNIQUE,
     PRIMARY KEY(id),
     CONSTRAINT fk_contact_user FOREIGN KEY(user_id)
     REFERENCES AutoShop.Users(id) 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS DistributorContacts(
     address VARCHAR(40) NOT NULL,
     phone VARCHAR(13) NOT NULL,
     email VARCHAR(50) NOT NULL,
-    distrib_id INT UNSIGNED NOT NULL,
+    distrib_id INT UNSIGNED NOT NULL UNIQUE,
     PRIMARY KEY (id),
     CONSTRAINT fk_distrib_contacts FOREIGN KEY (distrib_id)
     REFERENCES AutoShop.Distributor(id) 
