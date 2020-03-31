@@ -25,3 +25,7 @@ WHERE NOT EXISTS
 
 SELECT CONCAT(car.mark," ", car.model) as Car FROM car
 WHERE car.product_date = (SELECT MIN(car.product_date) FROM car);
+
+SELECT car.model, car.mark FROM car WHERE car.model NOT REGEXP("[0-9]");
+
+SELECT car.model, car.mark FROM car WHERE car.mark REGEXP("_a");
